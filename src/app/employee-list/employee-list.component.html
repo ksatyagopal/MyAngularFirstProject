@@ -6,11 +6,11 @@
         <th>Salary</th>
         <th>Date of Joining</th>
     </tr>
-    <tr *ngFor="let item in empList">
+    <tr *ngFor="let item of empList">
         <td>{{item.eid}}</td>
         <td>{{item.ename}}</td>
         <td>{{item.Salary}}</td>
-        <td>{{item.doj}}</td>
+        <td>{{item.doj|Date}}</td>
     </tr>
     
 </table>
