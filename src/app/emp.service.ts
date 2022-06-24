@@ -19,4 +19,7 @@ export class EmpService {
   getEmployees():any{
     return this.empList;
   }
+  AddEmployee(emp:Employee):void{
+    this.empList.push(emp);
+  }
 }
