@@ -1,1 +1,17 @@
 <p>employee-list works!</p>
+<table>
+    <tr>
+        <th>Employee ID</th>
+        <th>Employee Name</th>
+        <th>Salary</th>
+        <th>Date of Joining</th>
+    </tr>
+    <tr *ngFor="let item in empList">
+        <td>{{item.eid}}</td>
+        <td>{{item.ename}}</td>
+        <td>{{item.Salary}}</td>
+        <td>{{item.doj}}</td>
+    </tr>
+    
+</table>
+<p>{{empList|json}}</p>
