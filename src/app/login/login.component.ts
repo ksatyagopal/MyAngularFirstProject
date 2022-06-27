@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Route, Router } from '@angular/router';
 import { EmpService } from '../emp.service';
 
 
@@ -8,10 +9,9 @@ import { EmpService } from '../emp.service';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-  empname = "Hyderabad";
-  greet:string;
-  variable:string;
-  constructor(private empservice:EmpService) {
+  empname = "";
+  password = "";
+  constructor(private empservice:EmpService,private route:Router) {
 
    }
 
@@ -19,9 +19,14 @@ export class LoginComponent implements OnInit {
   }
 
   login(): void{
-    this.greet = "Welcome " + this.empname;
-    this.variable = this.empservice.cname();
-    console.log(this.greet);
+    sessionStorage.setItem("ename",this.empname);
+    if(this.empname=="admin" && this.password=="admin"){
+      this.route.navigateByUrl("dashboard");
+    }
+    else{
+      this.route.navigateByUrl("login")
+    }
+    
   }
 
 }
